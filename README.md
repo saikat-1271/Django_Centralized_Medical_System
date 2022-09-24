@@ -1,0 +1,2 @@
+# Django_Centralized_Medical_System
+Centralized_Medical_System
