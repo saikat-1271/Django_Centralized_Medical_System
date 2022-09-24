@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-evenly">
+    <form  method="post" action="insert_adm">
+        {% csrf_token %}
+        <label for="basic-url" class="form-label text-center fw-bolder">Name</label>
+        <div class="input-group mb-3">
+            <input type="text" name="name" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        
+        <label for="basic-url" class="form-label text-center fw-bolder">Password</label>
+        <div class="input-group mb-3">
+            <input type="text" name="password" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <label for="basic-url" class="form-label text-center fw-bolder">Mobile No</label>
+        <div class="input-group mb-3">
+            <input type="text" name="mob" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <input type="submit">
+        <!-- <input type="text"  name="name">
+        <input type="text"  name="email">
+        <input type="text"  name="pwd">
+        <input type="submit"> -->
+    </form>
+</div>
+
+
+
+{% endblock %}

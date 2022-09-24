@@ -1,0 +1,45 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="row">
+    <div class="col-5">
+        <form class="w-100 mt-5 p-5" method="post" action="patient_log">
+            {% csrf_token %}
+            <label for="basic-url" class="form-label text-center fw-bolder">Email</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="email" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+            <label for="basic-url" class="form-label text-center fw-bolder">Password</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="password" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+            <input type="submit" class="btn btn-primary w-25"></input>
+        </form>
+        
+    </div>
+    <div class="col-5">
+        <div class="w-100">
+            <img src="{% static 'patient_login_logo.png' %}" class="m-3" alt="..." style="height:450px ;">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row px-3">
+  <div class="col-3">
+    <div class=" d-flex flex-column " style="height: 110vh; background-color: rgb(142, 177, 252);">
+      <div class=" d-flex justify-content-evenly w-100 mt-4" style="height:7rem ;">
+        <img src="{% static 'dr_profile.jpg' %}" style="border: 4px solid black ;" class="img-thumbnail w-50" alt="...">
+      </div>
+      <div class="d-flex justify-content-evenly w-100 mt-4">
+        <p>Doctor Name:</p>
+      </div>
+      <div class="d-flex justify-content-evenly w-100 ">
+        <h2>{{b.name}}</h2>
+      </div>
+      <div class="d-flex justify-content-evenly w-100 ">
+        <a href="{% url 'insert_pr' %}" class="btn btn-primary w-75">Add Patient</a>
+      </div>
+      <div class="d-flex justify-content-evenly w-100 ">
+        <!-- <a href="edit_doctor/{{i.id}}" class="btn btn-primary mt-2 w-75">edit</a> -->
+        <a href="edit_doctor/{{b.id}}" class="btn btn-primary mt-2 w-75">Edit</a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="col-8">
+
+    <h1>patient</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email Address</th>
+          <th scope="col">Mobile no.</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in x %}
+        <tr>
+          <th scope="row">{{i.id}}</th>
+          <th><a style="text-decoration:none ;" href="../../../pt_history/{{b.id}}/{{i.id}}">{{i.name}}</a></th>
+          <td>{{i.email}}</td>
+          <td>{{i.mob}}</td>
+          <td><a href="delete_patient/{{i.id}}" class="btn btn-primary">delete</a>
+          <!-- <td><a href="edit_patient/{{i.id}}" class="btn btn-primary">edit</a> -->
+
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

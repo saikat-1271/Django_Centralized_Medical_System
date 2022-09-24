@@ -1,0 +1,52 @@
+
+
+
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row p-2">
+  <div class="col-3">
+    <div class=" d-flex flex-column " style="height: 110vh; background-color: rgb(142, 177, 252);">
+      <div class=" d-flex justify-content-evenly w-100 mt-4" style="height:7rem ;">
+        <img src="{% static 'patient_logo.png' %}" style="border: 4px solid black ;" class="img-thumbnail w-50"
+          alt="...">
+      </div>
+      <div class="d-flex justify-content-evenly w-100 mt-4">
+        <p>Name:</p>
+      </div>
+      <div class="d-flex justify-content-evenly w-100 ">
+        <h2>{{b.name}}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-8">
+    
+    <!-- <tr>
+              <th scope="row">{{x.id}}</th>
+              <th >{{x.name}}</th>
+              <td>{{x.email}}</td>
+                <td>{{x.password}}</td>
+                <td>{{x.mob}}</td>
+                <td><a href="delete_patient/{{i.id}}" class="btn btn-primary">delete</a>
+                <td><a href="edit_patient/{{i.id}}" class="btn btn-primary">edit</a>
+    
+              </tr>
+  </div> -->
+</div>
+
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

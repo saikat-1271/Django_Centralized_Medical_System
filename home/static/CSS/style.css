@@ -1,0 +1,5 @@
+img.background {
+
+    -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
+    filter: blur(3px);
+    }

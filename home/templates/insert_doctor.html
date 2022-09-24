@@ -1,0 +1,79 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+
+
+
+
+
+<div class="row px-3">
+    <div class="col-4">
+        <div class=" sticky-top mt-5" style="height: 45vh; background-color: rgb(142, 177, 252); border: 4px solid black; border-radius: 10px;">
+            <div style="width: 80%;" class="text-wrap m-4">
+                <ul class="list-unstyled fw-bold">
+                    <li>Remember:
+                        <ul>
+                            <li> Please enter all fields correctly</li>
+                            <li>Password should contain atleast 4 characters</li>
+                            <li>After Registration If you want to delet Your Account.Please contact Administration</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-7">
+
+
+
+        
+<div class="d-flex justify-content-evenly">
+    <form class="w-75" method="post" action="insert_dr">
+        {% csrf_token %}
+        <h6>Name:</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="name" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Email</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="email" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Password</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="password" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Mobile No</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="mob" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <input class="btn btn-primary" type="submit">
+    </form>
+</div>
+    
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

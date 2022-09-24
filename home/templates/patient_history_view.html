@@ -1,0 +1,104 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row px-3">
+    <div class="col-3">
+        <div class=" d-flex flex-column " style="height: 110vh; background-color: rgb(142, 177, 252);">
+            <div class=" d-flex justify-content-evenly w-100 mt-4" style="height:7rem ;">
+                <img src="{% static 'dr_profile.jpg' %}" style="border: 4px solid black ;" class="img-thumbnail w-50"
+                    alt="...">
+            </div>
+            <div class="d-flex justify-content-evenly w-100 mt-4">
+                <p>Doctor Name:</p>
+            </div>
+            <div class="d-flex justify-content-evenly w-100 ">
+                <h2>{{dr.name}}</h2>
+            </div>
+            <!-- <div class="d-flex justify-content-evenly w-100 ">
+                <a href="{% url 'insert_pr' %}" class="btn btn-primary w-75">Add Patient</a>
+            </div>
+            <div class="d-flex justify-content-evenly w-100 ">
+                <a href="../../../edit_doctor/{{dr.id}}" class="btn btn-primary mt-2 w-75">Edit</a>
+
+            </div> -->
+            <div class="d-flex justify-content-evenly w-100 ">
+                <!-- <a href="edit_doctor/{{i.id}}" class="btn btn-primary mt-2 w-75">edit</a> -->
+                <a href="../../../insert_pt_history_form/{{dr.id}}/{{pt.id}}" class="btn btn-primary mt-2 w-75">Insert
+                    Details</a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="col-9">
+
+        <div class="row">
+            <h1>Patient Details</h1>
+            <div class="col-2 mt-1 ">
+                <div style="height: 45vh;">
+                    <h4>Name:</h4>
+                    <h4>Case:</h4>
+                    <h4>Email:</h4>
+                    <h4>BP:</h4>
+                    <h4>Mobile:</h4>
+                    <h4>Address:</h4>
+                    <h4>Weight:</h4>
+                </div>
+            </div>
+            <div class="col-5 mt-1">
+                <div style="height: 45vh;">
+                    <h4>{{pt.name}}</h4>
+                    <h4>{{pt.case}}</h4>
+                    <h4>{{pt.email}}</h4>
+                    <h4>{{pt.bp}} </h4>
+                    <h4>{{pt.mob}}</h4>
+                    <h4>{{pt.add}}</h4>
+                    <h4>{{pt.weight}} Kg</h4>
+                </div>
+            </div>
+        </div>
+        <h1 class="my-4">Patient History</h1>
+        <table class="table my-3">
+            <thead>
+                <tr>
+                    <th scope="col">Doctor</th>
+                    <th scope="col">Report</th>
+                    <th scope="col">Tests</th>
+                    <th scope="col">Prescription</th>
+                    <th scope="col">Medication</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            {% for i in h %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{i.doctor_name}}</th>
+                    <td>{{i.report}}</td>
+                    <td>{{i.test_done}}</td>
+                    <td>{{i.prescription}}</td>
+                    <td>{{i.medication}}</td>
+                    <td>{{i.date}}</td>
+                </tr>
+
+            </tbody>
+            {% endfor %}
+        </table>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

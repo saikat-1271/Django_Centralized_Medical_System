@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-evenly">
+    <form  method="post" action="../encode_dr/{{ t.id }}">
+        {% csrf_token %}
+        <label for="basic-url" class="form-label text-center fw-bolder">Name</label>
+        <div class="input-group mb-3">
+            <input type="text" name="name" value="{{ t.name }}" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <label for="basic-url" class="form-label text-center fw-bolder">Email</label>
+        <div class="input-group mb-3">
+            <input type="text" value="{{ t.email }}" name="email" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <label for="basic-url" class="form-label text-center fw-bolder">Password</label>
+        <div class="input-group mb-3">
+            <input type="text" value="{{ t.password }}" name="password" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <label for="basic-url" class="form-label text-center fw-bolder">Mobile No</label>
+        <div class="input-group mb-3">
+            <input type="text" value="{{ t.mob }}" name="mob" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <input type="submit">
+    </form>
+</div>
+
+
+
+{% endblock %}

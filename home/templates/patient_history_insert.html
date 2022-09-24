@@ -1,0 +1,84 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="row px-3">
+    <div class="col-4">
+        <div class=" sticky-top mt-5" style="height: 45vh; background-color: rgb(142, 177, 252); border: 4px solid black; border-radius: 10px;">
+            <div style="width: 80%;" class="text-wrap m-4">
+                <ul class="list-unstyled fw-bold">
+                    <li>Remember:
+                        <ul>
+                            <li> Please enter all fields correctly</li>
+                            <li>If you face any diffuculty,please contact administration</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-7">
+
+
+        <h1 class="ml-3">Patient Name : {{pt.name}}</h1>
+        <div class="d-flex justify-content-evenly">
+            <form method="post" action="../../../../pt_insert_history/{{dr.id}}/{{pt.id}}/" class="w-75" style="height: 90vh;">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" name="patient_id" value="{{pt.id}}" class="visually-hidden input-group input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <input type="text" name="doctor_id" value="{{dr.id}}" class="input-group visually-hidden input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="doctor_name" value="{{dr.name}}" class="input-group visually-hidden input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="password" value="{{pt.password}}" class="input-group visually-hidden input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                <h6>Report:</h6>
+                <div class="input-group mb-3">
+                    <input type="text" name="report"  class="input-group input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                <h6>Tests:</h6>
+                <div class="input-group mb-3">
+                    <input type="text" name="test_done"  class="input-group input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                <h6>Prescription:</h6>
+                <div class="input-group mb-3">
+                    <input type="text" name="prescription"  class="input-group input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                <h6>medication:</h6>
+                <div class="input-group mb-3">
+                    <input type="text" name="medication"  class="input-group input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                <h6>Date:</h6>
+                <div class="input-group mb-3">
+                    <input type="date" name="date"  class="input-group input-group-sm mb-1" id="basic-url"
+                        aria-describedby="basic-addon3">
+                </div>
+                <input type="submit">
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

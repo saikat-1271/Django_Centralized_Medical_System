@@ -1,0 +1,53 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-evenly">
+    <form method="post" action="../encode_pt/{{ t.id }}">
+        {% csrf_token %}
+        <h6>Name:</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="name" value="{{t.name}}" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Email</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="email" value="{{t.email}}" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Password</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="password" value="{{t.password}}" class="input-group input-group-sm mb-1"
+                id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <h6>Mobile No</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="mob" value="{{t.mob}}" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Address</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="add" value="{{t.add}}" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Blood Pressure</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="bp" value="{{t.bp}}" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Case</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="case" value="{{t.case}}" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <h6>Weight</h6>
+        <div class="input-group mb-3">
+            <input type="text" name="weight" value="{{t.weight}}" class="input-group input-group-sm mb-1" id="basic-url"
+                aria-describedby="basic-addon3">
+        </div>
+        <input type="submit">
+    </form>
+</div>
+
+
+
+{% endblock %}

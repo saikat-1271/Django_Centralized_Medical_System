@@ -1,0 +1,99 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row p-2">
+  <div class="col-3">
+    <div class=" d-flex flex-column " style="height: 110vh; background-color: rgb(142, 177, 252);">
+      <div class=" d-flex justify-content-evenly w-100 mt-4" style="height:7rem ;">
+        <img src="{% static 'patient_logo.png' %}" style="border: 4px solid black ;" class="img-thumbnail w-50"
+          alt="...">
+      </div>
+      <div class="d-flex justify-content-evenly w-100 mt-4">
+        <p>Patient Name:</p>
+      </div>
+      <div class="d-flex justify-content-evenly w-100 ">
+        <h2>{{x.name}}</h2>
+      </div>
+      <div class="d-flex justify-content-evenly w-100 ">
+        <a href="edit_patient/{{x.id}}" class="btn btn-primary w-75">Edit</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <div class="row">
+      <h1>Patient Details</h1>
+      <div class="col-2 mt-1 ">
+        <div style="height: 45vh;">
+          <h4>Case:</h4>
+          <h4>Email:</h4>
+          <h4>BP:</h4>
+          <h4>Mobile:</h4>
+          <h4>Address:</h4>
+          <h4>Weight:</h4>
+        </div>
+      </div>
+      <div class="col-5 mt-1">
+        <div style="height: 45vh;">
+          <h4>{{x.case}}</h4>
+          <h4>{{x.email}}</h4>
+          <h4>{{x.bp}} </h4>
+          <h4>{{x.mob}}</h4>
+          <h4>{{x.add}}</h4>
+          <h4>{{x.weight}} Kg</h4>
+        </div>
+      </div>
+    </div>
+    <h1 class="my-2">Patient History</h1>
+        <table class="table my-3">
+            <thead>
+                <tr>
+                    <th scope="col">Doctor</th>
+                    <th scope="col">Report</th>
+                    <th scope="col">Tests</th>
+                    <th scope="col">Prescription</th>
+                    <th scope="col">Medication</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            {% for i in y %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{i.doctor_name}}</th>
+                    <td>{{i.report}}</td>
+                    <td>{{i.test_done}}</td>
+                    <td>{{i.prescription}}</td>
+                    <td>{{i.medication}}</td>
+                    <td>{{i.date}}</td>
+                </tr>
+
+            </tbody>
+            {% endfor %}
+        </table>
+  </div>
+</div>
+<!-- <tr>
+          <th scope="row">{{x.id}}</th>
+          <th >{{x.name}}</th>
+          <td>{{x.email}}</td>
+            <td>{{x.password}}</td>
+            <td>{{x.mob}}</td>
+            <td><a href="delete_patient/{{i.id}}" class="btn btn-primary">delete</a>
+            <td><a href="edit_patient/{{i.id}}" class="btn btn-primary">edit</a>
+
+          </tr> -->
+
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+{% endblock %}

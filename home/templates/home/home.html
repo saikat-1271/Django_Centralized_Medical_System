@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %} 
+
+<div class="my-3">
+  <p class="display-2 d-flex justify-content-center">WELCOME</p>
+  <p class="h4 d-flex justify-content-center">your health is our concern</p>
+</div>
+
+<div class="d-flex justify-content-evenly">
+
+
+  <div class="card float-start mx-4 my-2 p-2"
+    style="width: 18rem; background-color: rgb(225, 234, 255);border: 2px solid rgb(157, 175, 214);">
+    <img src="{% static 'pic1.jpg' %}" style="border-radius: 10px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title d-flex justify-content-center">Doctor</h5>
+      <!-- <p class="card-text d-flex justify-content-center">{{post.body}}</p> -->
+      <a href="{% url 'doctor_login' %}" class="btn d-flex justify-content-center"
+        style="background-color:rgb(100, 149, 255) ;">Login</a>
+    </div>
+  </div>
+  <div class="card float-start mx-4 my-2 p-2"
+    style="width: 18rem; background-color: rgb(225, 234, 255);border: 2px solid rgb(157, 175, 214);">
+    <img src="{%  static 'patient_home.jpg'  %}" style="border-radius: 10px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title d-flex justify-content-center">Patient</h5>
+      <!-- <p class="card-text d-flex justify-content-center">{{post.body}}</p> -->
+      <a href="{% url 'patient_login' %}" class="btn d-flex justify-content-center"
+        style="background-color:rgb(100, 149, 255) ;">Login</a>
+    </div>
+  </div>
+  <div class="card float-start mx-4 my-2 p-2"
+    style="width: 18rem; background-color: rgb(225, 234, 255);border: 2px solid rgb(157, 175, 214);">
+    <img src="{%  static 'admin_home.jpg'  %}" style="border-radius: 10px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title d-flex justify-content-center">Management</h5>
+      <!-- <p class="card-text d-flex justify-content-center">{{post.body}}</p> -->
+      <a href="{% url 'admin_login' %}" class="btn d-flex justify-content-center"
+        style="background-color:rgb(100, 149, 255) ;">Login</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

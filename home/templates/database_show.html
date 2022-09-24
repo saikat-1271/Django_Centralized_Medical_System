@@ -1,0 +1,113 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="row px-3">
+    <div class="col-3">
+        <div class=" d-flex flex-column " style="height: 100%; background-color: rgb(142, 177, 252);">
+            <div class="sticky-top">
+
+                <div class=" d-flex justify-content-evenly w-100 mt-4" style="height:7rem ;">
+                    <img src="{% static 'admin_logo.png' %}" style="border: 4px solid black ;"
+                        class="img-thumbnail w-50" alt="...">
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-5">
+
+
+        <h1>Patients</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Mobile no.</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in x %}
+                <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <th>{{i.name}}</th>
+                    <td>{{i.email}}</td>
+                    <td>{{i.password}}</td>
+                    <td>{{i.mob}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1>Doctors</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Mobile no.</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in b %}
+                <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <th>{{i.name}}</th>
+                    <td>{{i.email}}</td>
+                    <td>{{i.password}}</td>
+                    <td>{{i.mob}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1>Admin</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Mobile no.</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in c %}
+                <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <th>{{i.name}}</th>
+                    <td>{{i.password}}</td>
+                    <td>{{i.mob}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+   
+
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
